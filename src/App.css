@@ -13,13 +13,14 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
 }
 
 .container{
   width: 100vw;
   height: 100vh;
   /*display: flex;*/
-  /*overflow: hidden;*/
+  overflow: hidden;
   background: #21181F !important;
 }
 
@@ -44,5 +45,40 @@
 
 }
 
+.image-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 80%;
+}
 
+.img-animation {
+  position: absolute;
 
+  transition: all 0.6s ease-in-out;
+}
+
+.orange {
+  z-index: 2;
+  transform: translateY(0%);
+}
+
+.blue {
+  z-index: 1;
+  transform: translateY(150%);
+}
+
+.image-container.swap .orange {
+  transform: translateY(-150%);
+  z-index: 1;
+}
+
+.image-container.swap .blue {
+  transform: translateY(0px);
+  z-index: 2;
+
+}
