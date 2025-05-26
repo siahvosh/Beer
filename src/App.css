@@ -1,24 +1,8 @@
 .App {
   text-align: center;
   font-family: 'Great Vibes', cursive;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
-
-.container{
-  width: 100vw;
-  height: 100vh;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -30,15 +14,17 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.container{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #21181F !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.labels{
+  height: 100vh;
+  z-index: 1;
 }
+
+
