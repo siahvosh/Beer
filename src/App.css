@@ -31,6 +31,38 @@
   z-index: 1;
 }
 
+.friends-img{
+  display: flex;
+  position: absolute;
+  background-image: url("/public/beach-friends5.png"), url("/public/clouds_1929.jpeg");
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 50%;
+  margin: auto;
+}
+
+.burger-img{
+  display: flex;
+  position: absolute;
+  background-image:  url("/public/burger4.png"), url("/public/burger-bg2.jpg");
+  background-position: bottom;
+  background-size: cover;
+  height: 100%;
+  width: 50%;
+  margin: auto;
+}
+.slide4-img{
+  display: flex;
+  position: absolute;
+  background-image:  url("/public/slide41.jpg");
+  background-position: bottom;
+  background-size: cover;
+  height: 100%;
+  width: 50%;
+  margin: auto;
+}
+
 .image-container {
   position: absolute;
   display: flex;
@@ -44,17 +76,6 @@
   animation: img 2s linear infinite;
 }
 
-@keyframes img {
-  0%{
-    margin-top: 0;
-  }
-
-  50%{
-    margin-top: 1rem
-  }
-
-}
-
 .img-animation {
   position: absolute;
   left: 50%;
@@ -63,6 +84,10 @@
   transition: all 0.6s ease;
   margin-top: 0;
   overflow: hidden;
+}
+
+img{
+  width: clamp(2rem, 20.5vw, 23.5rem);
 }
 
 .up {
@@ -76,6 +101,17 @@
 }
 .up-enter {
   animation: moveUpIn 0.6s forwards;
+}
+
+@keyframes img {
+  0%{
+    margin-top: 0;
+  }
+
+  50%{
+    margin-top: 1rem
+  }
+
 }
 
 @keyframes moveUp {
@@ -102,13 +138,13 @@
   margin: 25vh 0 0 10vh;
   text-align: left;
   padding: 2rem;
-  font-family: Averia Serif Libre;
-  /*border: 2px solid red;*/
 
+  font-family: Averia Serif Libre;
 }
 .text-animation{
   display: flex;
   flex-direction: column;
+  font-size: clamp(1rem, 1.5vw, 2.5rem);
 }
 
 
@@ -151,7 +187,7 @@
 
 .label-font{
   font-family: "Great Vibes", cursive;
-  font-size: 5vw;
+  font-size: 5rem;
   font-weight: 500;
   margin-left: 5rem;
   margin-top: -2rem;

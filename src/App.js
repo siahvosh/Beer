@@ -131,6 +131,9 @@ function App() {
                                objectFit: 'cover',
                            }}
                        />
+                       <div className={'friends-img'}></div>
+                       <div className={'burger-img'}></div>
+                       <div className={'slide4-img'}></div>
                    </div>
                </Grid>
                <Grid size={6}>
