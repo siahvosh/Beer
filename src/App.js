@@ -4,7 +4,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import './App.css';
-import {Grid} from "@mui/material";
+import {Button, Grid} from "@mui/material";
 import {useEffect, useState} from "react";
 
 function App() {
@@ -99,10 +99,12 @@ function App() {
                            alt={`${bottles[currentIndex]} beer`}
                        />
                    </div>
-                   <div style={{marginTop: '20rem'}}>
-                       <div>Lorem ipsumdset,o.</div>
-                       <div>Lorem ipsumsad amet,o.</div>
-                       <div>sdfsd Lorem ipsumdset,o.</div>
+                   <div className={'text-container'}>
+                       <span style={{fontSize: '4rem', fontWeight: 900}}>Pure</span>
+                       <span style={{fontSize: '3rem', fontWeight: 500, color: 'orange', marginLeft: '3rem'}}>Beer</span>
+                       <span style={{fontSize: '4rem', fontWeight: 900}}>pleasure</span>
+                       <span style={{marginTop: '1.5rem', fontWeight: 200}}>Discover your new favorite beer, where every sip becomes a moment to savor, indulging in a symphony of flavors that will leave a lasting impression.</span>
+                       <Button style={{fontWeight: 700, background: 'orange', borderRadius: '14px', width: '200px', marginTop: '1rem', color: 'black'}} variant="contained">Learn More</Button>
                    </div>
 
 

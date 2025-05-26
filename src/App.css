@@ -59,7 +59,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.6s ease;
-  margin-top: 0rem;
+  margin-top: 0;
   overflow: hidden;
 }
 
@@ -96,3 +96,12 @@
   to   { transform: translate(-50%, -50%); opacity: 1; }
 }
 
+.text-container{
+  display: flex;
+  flex-direction: column;
+  margin: 20vh 0 0 15vh;
+  text-align: left;
+  padding: 2rem;
+  /*border: 2px solid red;*/
+  font-family: Allura;
+}
