@@ -5,13 +5,28 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import './App.css';
 import {Grid} from "@mui/material";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 function App() {
     const bottles = ["orange", "blue", "red", 'green'];
     const [currentIndex, setCurrentIndex] = useState(0);
     const [animationDirection, setAnimationDirection] = useState(""); // "up" | "down"
     const [isAnimating, setIsAnimating] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = (e) => {
+            if (isAnimating) return;
+
+            if (e.deltaY > 0) {
+                handleNext();
+            } else if (e.deltaY < 0) {
+                handlePrev();
+            }
+        };
+
+        window.addEventListener("wheel", handleScroll);
+        return () => window.removeEventListener("wheel", handleScroll);
+    }, [isAnimating, currentIndex]);
 
     const handleNext = () => {
         if (isAnimating || currentIndex >= bottles.length - 1) return;
@@ -84,10 +99,12 @@ function App() {
                            alt={`${bottles[currentIndex]} beer`}
                        />
                    </div>
-                   <div style={{marginTop: '20rem'}}>Lorem ipsum dolor sit amet,o.</div>
-                   <div>Lorem ipsumdset,o.</div>
-                   <div>Lorem ipsumsad amet,o.</div>
-                   <div>sdfsd Lorem ipsumdset,o.</div>
+                   <div style={{marginTop: '20rem'}}>
+                       <div>Lorem ipsumdset,o.</div>
+                       <div>Lorem ipsumsad amet,o.</div>
+                       <div>sdfsd Lorem ipsumdset,o.</div>
+                   </div>
+
 
                </Grid>
            </Grid>

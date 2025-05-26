@@ -19,8 +19,6 @@
 .container{
   width: 100vw;
   height: 100vh;
-  /*display: flex;*/
-  /*overflow: hidden;*/
   background: #21181F !important;
 }
 
@@ -30,20 +28,6 @@
   position: absolute;
   z-index: 1;
 }
-
-
-@keyframes img {
-  0%{
-    margin-top: 0rem;
-  }
-
-  50%{
-    margin-top: 1rem
-  }
-
-}
-
-
 
 .image-container {
   position: absolute;
@@ -58,6 +42,17 @@
   animation: img 2s linear infinite;
 }
 
+@keyframes img {
+  0%{
+    margin-top: 0;
+  }
+
+  50%{
+    margin-top: 1rem
+  }
+
+}
+
 .img-animation {
   position: absolute;
   left: 50%;
@@ -67,7 +62,6 @@
   margin-top: 0rem;
   overflow: hidden;
 }
-
 
 .up {
   animation: moveUp 0.6s forwards;
