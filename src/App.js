@@ -8,16 +8,31 @@ import {Grid} from "@mui/material";
 import {useState} from "react";
 
 function App() {
+    const bottles = ["orange", "blue", "red", 'green'];
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [animationDirection, setAnimationDirection] = useState(""); // "up" | "down"
+    const [isAnimating, setIsAnimating] = useState(false);
 
-
-    const [isSwapped, setIsSwapped] = useState(false);
-
-    const handleSwapUp = () => {
-        setIsSwapped(true);
+    const handleNext = () => {
+        if (isAnimating || currentIndex >= bottles.length - 1) return;
+        setAnimationDirection("up");
+        setIsAnimating(true);
+        setTimeout(() => {
+            setCurrentIndex((prev) => prev + 1);
+            setAnimationDirection("down");
+            setTimeout(() => setIsAnimating(false), 200);
+        }, 200);
     };
 
-    const handleSwapDown = () => {
-        setIsSwapped(false);
+    const handlePrev = () => {
+        if (isAnimating || currentIndex <= 0) return;
+        setAnimationDirection("down-exit");
+        setIsAnimating(true);
+        setTimeout(() => {
+            setCurrentIndex((prev) => prev - 1);
+            setAnimationDirection("up-enter");
+            setTimeout(() => setIsAnimating(false), 200);
+        }, 200);
     };
 
     return (
@@ -35,8 +50,8 @@ function App() {
                    <GitHubIcon fontSize={'large'}/>
                </div>
                <div style={{ position: 'absolute', zIndex: '1', bottom: '2.5rem', right: '2.5rem', display: 'flex', flexDirection: 'column' }}>
-                   <KeyboardArrowUpIcon fontSize={'large'} onClick={handleSwapUp} style={{ cursor: 'pointer' }} />
-                   <KeyboardArrowDownIcon fontSize={'large'} onClick={handleSwapDown} style={{ cursor: 'pointer' }} />
+                   <KeyboardArrowUpIcon fontSize={'large'} onClick={handlePrev} style={{ cursor: 'pointer' }} />
+                   <KeyboardArrowDownIcon fontSize={'large'} onClick={handleNext} style={{ cursor: 'pointer' }} />
                </div>
            </div>
            <Grid container spacing={1}>
@@ -60,10 +75,14 @@ function App() {
                        />
                    </div>
                </Grid>
-               <Grid size={6} >
-                   <div className={`image-container ${isSwapped ? 'swap' : ''}`}>
-                       <img className="img-animation orange" src="/orange-beer.png" alt="orange beer" />
-                       <img className="img-animation blue" src="/blue-beer.png" alt="blue beer" />
+               <Grid size={6}>
+                   <div className={'image-container'}>
+                       <img
+                           key={bottles[currentIndex]}
+                           className={`img-animation ${bottles[currentIndex]} ${animationDirection} floating`}
+                           src={`/${bottles[currentIndex]}-beer.png`}
+                           alt={`${bottles[currentIndex]} beer`}
+                       />
                    </div>
                    <div style={{marginTop: '20rem'}}>Lorem ipsum dolor sit amet,o.</div>
                    <div>Lorem ipsumdset,o.</div>
