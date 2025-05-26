@@ -9,10 +9,40 @@ import {useEffect, useState} from "react";
 
 function App() {
     const bottles = ["orange", "blue", "red", 'green'];
+    const texts = [
+        {
+            title: "Pure",
+            label: "beer",
+            title2: "Pleasure",
+            desc: "Discover your new favorite beer, where every sip becomes a moment to savor, indulging in a symphony of flavors that will leave a lasting impression.",
+            color: '#F19F00'
+        },
+        {
+            title: "Crafted",
+            label: "for",
+            title2: "Moments",
+            desc: "Elevate your experiences with our thoughtfully crafted brews, tailored to create unforgettable memories.",
+            color: '#00B4C1'
+        },
+        {
+            title: "Indulge",
+            label: "enjoy",
+            title2: "Repeat",
+            desc: "Let Sunshine Craft Beer Transport You to a Realm of Taste and Pleasure",
+            color: '#F91D00'
+        },
+        {
+            title: "Tradition",
+            label: "and",
+            title2: "Innovation",
+            desc: "Embrace the perfect blend of heritage and forward-thinking to savor unrivaled taste and craftsmanship.",
+            color: '#4CD964'
+        }
+    ];
     const [currentIndex, setCurrentIndex] = useState(0);
     const [animationDirection, setAnimationDirection] = useState(""); // "up" | "down"
     const [isAnimating, setIsAnimating] = useState(false);
-
+    const [textAnimationClass, setTextAnimationClass] = useState("");
     useEffect(() => {
         const handleScroll = (e) => {
             if (isAnimating) return;
@@ -30,26 +60,39 @@ function App() {
 
     const handleNext = () => {
         if (isAnimating || currentIndex >= bottles.length - 1) return;
-        setAnimationDirection("up");
+
         setIsAnimating(true);
+        setAnimationDirection("up");
+        setTextAnimationClass("text-exit-up");
+
         setTimeout(() => {
             setCurrentIndex((prev) => prev + 1);
             setAnimationDirection("down");
-            setTimeout(() => setIsAnimating(false), 200);
+            setTextAnimationClass("text-enter-bottom");
+
+            setTimeout(() => {
+                setIsAnimating(false);
+            }, 200);
         }, 200);
     };
 
     const handlePrev = () => {
         if (isAnimating || currentIndex <= 0) return;
-        setAnimationDirection("down-exit");
+
         setIsAnimating(true);
+        setAnimationDirection("down-exit");
+        setTextAnimationClass("text-exit-down");
+
         setTimeout(() => {
             setCurrentIndex((prev) => prev - 1);
             setAnimationDirection("up-enter");
-            setTimeout(() => setIsAnimating(false), 200);
+            setTextAnimationClass("text-enter-top");
+
+            setTimeout(() => {
+                setIsAnimating(false);
+            }, 200);
         }, 200);
     };
-
     return (
     <div className="App">
       <header className="App-header">
@@ -100,14 +143,16 @@ function App() {
                        />
                    </div>
                    <div className={'text-container'}>
-                       <span style={{fontSize: '4rem', fontWeight: 900}}>Pure</span>
-                       <span style={{fontSize: '3rem', fontWeight: 500, color: 'orange', marginLeft: '3rem'}}>Beer</span>
-                       <span style={{fontSize: '4rem', fontWeight: 900}}>pleasure</span>
-                       <span style={{marginTop: '1.5rem', fontWeight: 200}}>Discover your new favorite beer, where every sip becomes a moment to savor, indulging in a symphony of flavors that will leave a lasting impression.</span>
-                       <Button style={{fontWeight: 700, background: 'orange', borderRadius: '14px', width: '200px', marginTop: '1rem', color: 'black'}} variant="contained">Learn More</Button>
+                       <div className={`text-animation ${textAnimationClass}`}>
+                           <span style={{ fontSize: '5rem', fontWeight: 800 }}>{texts[currentIndex].title}</span>
+                           <span className={'label-font'} style={{color: `${texts[currentIndex].color}` }}>{texts[currentIndex].label}</span>
+                           <span style={{ fontSize: '5rem', fontWeight: 800,}}>{texts[currentIndex].title2}</span>
+                           <p style={{ marginTop: '1rem', fontWeight: 300 }}>{texts[currentIndex].desc}</p>
+                           <Button style={{ fontWeight: 700, background: `${texts[currentIndex].color}`, borderRadius: '14px', width: '200px', marginTop: '1rem', color: 'black' }}>
+                               Learn More
+                           </Button>
+                       </div>
                    </div>
-
-
                </Grid>
            </Grid>
        </div>

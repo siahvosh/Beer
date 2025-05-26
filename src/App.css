@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 .App {
   text-align: center;
   font-family: 'Great Vibes', cursive;
@@ -97,11 +99,59 @@
 }
 
 .text-container{
-  display: flex;
-  flex-direction: column;
   margin: 20vh 0 0 15vh;
   text-align: left;
   padding: 2rem;
-  /*border: 2px solid red;*/
   font-family: Allura;
+
+}
+.text-animation{
+  display: flex;
+  flex-direction: column;
+}
+
+
+@keyframes textEnterFromTop {
+  from { transform: translateY(200px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes textEnterFromBottom {
+  from { transform: translateY(-200px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes textExitUp {
+  from { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(200px); opacity: 0; }
+}
+
+@keyframes textExitDown {
+  from { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(-200px); opacity: 0; }
+}
+
+
+
+.text-enter-top {
+  animation: textEnterFromTop 0.4s ease-out forwards;
+}
+
+.text-enter-bottom {
+  animation: textEnterFromBottom 0.4s ease-out forwards;
+}
+
+.text-exit-up {
+  animation: textExitUp 0.4s ease-out forwards;
+}
+
+.text-exit-down {
+  animation: textExitDown 0.4s ease-out forwards;
+}
+
+.label-font{
+  font-family: "Great Vibes", cursive;
+  font-size: 5rem;
+  font-weight: 500;
+  margin-left: 5rem;
 }
