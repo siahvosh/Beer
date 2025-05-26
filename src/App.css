@@ -31,36 +31,25 @@
   z-index: 1;
 }
 
-.friends-img{
+
+.images{
   display: flex;
   position: absolute;
-  background-image: url("/public/beach-friends5.png"), url("/public/clouds_1929.jpeg");
   background-position: center;
   background-size: cover;
   height: 100%;
   width: 50%;
   margin: auto;
 }
+.friends-img{
+  background-image: url("/public/beach-friends5.png"), url("/public/clouds_1929.jpeg");
+}
 
 .burger-img{
-  display: flex;
-  position: absolute;
   background-image:  url("/public/burger4.png"), url("/public/burger-bg2.jpg");
-  background-position: bottom;
-  background-size: cover;
-  height: 100%;
-  width: 50%;
-  margin: auto;
 }
 .slide4-img{
-  display: flex;
-  position: absolute;
   background-image:  url("/public/slide41.jpg");
-  background-position: bottom;
-  background-size: cover;
-  height: 100%;
-  width: 50%;
-  margin: auto;
 }
 
 .image-container {
@@ -138,7 +127,6 @@ img{
   margin: 25vh 0 0 10vh;
   text-align: left;
   padding: 2rem;
-
   font-family: Averia Serif Libre;
 }
 .text-animation{
