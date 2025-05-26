@@ -27,28 +27,38 @@ function App() {
                </div>
            </div>
            <Grid container spacing={1}>
-
                <Grid size={6}>
-                   <video
-                       src="/beer-video.mp4"
-                       autoPlay
-                       loop
-                       muted
-                       playsInline
-                       // width={1000}
-                       style={{
-                           position: 'absolute',
-                           top: 0,
-                           left: 0,
-                           width: '50%',
-                           height: '100%',
-                           objectFit: 'cover',
-                       }}
-                   />
-
+                   <div>
+                       <video
+                           src="/beer-video.mp4"
+                           autoPlay
+                           loop
+                           muted
+                           playsInline
+                           // width={1000}
+                           style={{
+                               position: 'absolute',
+                               top: 0,
+                               left: 0,
+                               width: '50%',
+                               height: '100%',
+                               objectFit: 'cover',
+                           }}
+                       />
+                   </div>
                </Grid>
-               <Grid style={{border: '2px solid red'}} size={6}>
-                   <div style={{margin: 'auto'}}>sdfdsfdsssssssssssss</div>
+               <Grid size={6}>
+                   <div style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
+                       <img className={'img-animation'} src="/orange-beer.png" alt=""/>
+                   </div>
+                   <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
+                       <img className={'img-animation'} src="/blue-beer.png" alt=""/>
+                   </div>
+                   <div style={{marginTop: '20rem'}}>Lorem ipsum dolor sit amet,o.</div>
+                   <div>Lorem ipsumdset,o.</div>
+                   <div>Lorem ipsumsad amet,o.</div>
+                   <div>sdfsd Lorem ipsumdset,o.</div>
+
                </Grid>
            </Grid>
 

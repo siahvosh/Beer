@@ -3,6 +3,7 @@
   font-family: 'Great Vibes', cursive;
 
 }
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -14,17 +15,34 @@
   color: white;
 }
 
-
 .container{
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  /*display: flex;*/
+  /*overflow: hidden;*/
   background: #21181F !important;
 }
 
 .labels{
   height: 100vh;
+  width: 100vw;
+  position: absolute;
   z-index: 1;
 }
+
+.img-animation{
+  animation: img 2s linear infinite;
+}
+@keyframes img {
+  0%{
+    margin-top: 0;
+  }
+
+  50%{
+    margin-top: -50px
+  }
+
+}
+
 
 
