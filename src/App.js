@@ -146,9 +146,9 @@ function App() {
                        <div className={`text-animation ${textAnimationClass}`}>
                            <span style={{ fontSize: '5rem', fontWeight: 800 }}>{texts[currentIndex].title}</span>
                            <span className={'label-font'} style={{color: `${texts[currentIndex].color}` }}>{texts[currentIndex].label}</span>
-                           <span style={{ fontSize: '5rem', fontWeight: 800,}}>{texts[currentIndex].title2}</span>
-                           <p style={{ marginTop: '1rem', fontWeight: 300 }}>{texts[currentIndex].desc}</p>
-                           <Button style={{ fontWeight: 700, background: `${texts[currentIndex].color}`, borderRadius: '14px', width: '200px', marginTop: '1rem', color: 'black' }}>
+                           <span style={{ fontSize: '5rem', fontWeight: 800, marginTop: '-3rem'}}>{texts[currentIndex].title2}</span>
+                           <p style={{color: 'gray', marginTop: '1rem', fontWeight: 100 }}>{texts[currentIndex].desc}</p>
+                           <Button style={{ fontWeight: 500, background: `${texts[currentIndex].color}`, borderRadius: '14px', width: '200px', marginTop: '1rem', color: 'black' }}>
                                Learn More
                            </Button>
                        </div>
