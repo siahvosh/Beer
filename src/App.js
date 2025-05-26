@@ -131,9 +131,9 @@ function App() {
                                objectFit: 'cover',
                            }}
                        />
-                       <div className={'friends-img images'}></div>
+                       {/*<div className={'friends-img images'}></div>*/}
                        <div className={'burger-img images'}></div>
-                       <div className={'slide4-img images'}></div>
+                       {/*<div className={'slide4-img images'}></div>*/}
                    </div>
                </Grid>
                <Grid size={6}>

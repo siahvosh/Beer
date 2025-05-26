@@ -35,13 +35,14 @@
 .images{
   display: flex;
   position: absolute;
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
   height: 100%;
   width: 50%;
   margin: auto;
 }
 .friends-img{
+  background-position: center;
   background-image: url("/public/beach-friends5.png"), url("/public/clouds_1929.jpeg");
 }
 
