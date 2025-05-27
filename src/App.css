@@ -3,6 +3,7 @@
 .App {
   text-align: center;
   font-family: Allura;
+
 }
 
 span{
@@ -10,6 +11,7 @@ span{
 }
 
 .App-header {
+
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -26,6 +28,7 @@ span{
   height: 100vh;
   background: #21181F !important;
   overflow: hidden;
+
 }
 .logo{
   position: absolute;
@@ -90,7 +93,7 @@ span{
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 100vw;
+  width: 30vw;
   height: 95vh;
   overflow: hidden;
   animation: img 2s linear infinite;
@@ -104,6 +107,7 @@ span{
   transition: all 0.6s ease;
   margin-top: 0;
   overflow: hidden;
+
 }
 
 img{
@@ -236,10 +240,18 @@ img{
   }
   .text-container{
     position: absolute;
-    bottom: 1rem;
-    left: -30px;
+    bottom: 2.5rem;
+    left: -80px;
     display: flex;
 
+  }
+
+}
+
+@media screen and (max-width: 800px){
+  .image-container{
+    left: 80%;
+    top: 50%;
   }
 }
 

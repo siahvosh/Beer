@@ -8,7 +8,6 @@ import {Button, Grid} from "@mui/material";
 import {useEffect, useState} from "react";
 
 function App() {
-    const bottles = ["orange", "blue", "red", 'green'];
     const texts = [
         {
             title: "Pure",
@@ -58,12 +57,11 @@ function App() {
             backgroundClass: "slide4-img"
         }
     ];
+    const bottles = ["orange", "blue", "red", 'green'];
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [animationDirection, setAnimationDirection] = useState("");
     const [isAnimating, setIsAnimating] = useState(false);
+    const [animationDirection, setAnimationDirection] = useState("");
     const [textAnimationClass, setTextAnimationClass] = useState("");
-
-
 
     useEffect(() => {
         const handleScroll = (e) => {
@@ -79,7 +77,6 @@ function App() {
         window.addEventListener("wheel", handleScroll);
         return () => window.removeEventListener("wheel", handleScroll);
     }, [isAnimating, currentIndex]);
-
 
     const handleNext = () => {
         if (isAnimating || currentIndex >= bottles.length - 1) return;
