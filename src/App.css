@@ -72,7 +72,7 @@ span{
 
 
 .friends-img{
-  background-position: center;
+  background-position: center ;
   background-image: url("/public/beach-friends5.png"), url("/public/clouds_1929.jpeg");
 }
 
@@ -236,8 +236,8 @@ img{
   }
   .text-container{
     position: absolute;
-    bottom: 2rem;
-    left: 0;
+    bottom: 1rem;
+    left: -30px;
     display: flex;
 
   }
