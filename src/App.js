@@ -14,7 +14,7 @@ function App() {
             title: "Pure",
             label: "Beer",
             title2: "Pleasure",
-            desc: "Discover your new favorite beer, where every sip becomes a moment to savor, indulging in a symphony of flavors that will leave a lasting impression.",
+            desc: "Where every sip becomes a moment to savor, indulging in a symphony of flavors that will leave a lasting impression.",
             color: '#F19F00'
         },
         {
