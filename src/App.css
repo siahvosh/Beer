@@ -23,12 +23,36 @@
   height: 100vh;
   background: #21181F !important;
 }
+.logo{
+  position: absolute;
+  z-index: 1;
+  top: 1.5rem;
+  left: 2.5rem;
+  width: 150px
+}
+.social-media{
+  position: absolute;
+  z-index: 1;
+  bottom: 1.5rem;
+  left: 2.5rem;
+  width: 150px;
+  display: flex;
+  gap: 10px;
+}
+
+.developer-name{
+  position: absolute;
+  right: 2.5rem;
+  top: 0.5rem;
+}
+
 
 .labels{
   height: 100vh;
   width: 100vw;
   position: absolute;
   z-index: 1;
+  /*border: 2px solid red;*/
 }
 
 
@@ -125,9 +149,9 @@ img{
 }
 
 .text-container{
-  margin: 25vh 0 0 10vh;
+  margin: 20vh 0 0 15vh;
   text-align: left;
-  padding: 2rem;
+  padding: 5rem;
   font-family: Averia Serif Libre;
 }
 .text-animation{
@@ -180,4 +204,12 @@ img{
   font-weight: 500;
   margin-left: 5rem;
   margin-top: -2rem;
+}
+
+
+.slider-icon{
+  position: absolute;
+  right: 2.5rem;
+  bottom: 1.5rem;
+  z-index: 1;
 }

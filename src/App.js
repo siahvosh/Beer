@@ -12,37 +12,38 @@ function App() {
     const texts = [
         {
             title: "Pure",
-            label: "beer",
+            label: "Beer",
             title2: "Pleasure",
             desc: "Discover your new favorite beer, where every sip becomes a moment to savor, indulging in a symphony of flavors that will leave a lasting impression.",
             color: '#F19F00'
         },
         {
             title: "Crafted",
-            label: "for",
+            label: "For",
             title2: "Moments",
             desc: "Elevate your experiences with our thoughtfully crafted brews, tailored to create unforgettable memories.",
             color: '#00B4C1'
         },
         {
             title: "Indulge",
-            label: "enjoy",
+            label: "Enjoy",
             title2: "Repeat",
             desc: "Let Sunshine Craft Beer Transport You to a Realm of Taste and Pleasure",
             color: '#F91D00'
         },
         {
             title: "Tradition",
-            label: "and",
+            label: "And",
             title2: "Innovation",
             desc: "Embrace the perfect blend of heritage and forward-thinking to savor unrivaled taste and craftsmanship.",
             color: '#4CD964'
         }
     ];
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [animationDirection, setAnimationDirection] = useState(""); // "up" | "down"
+    const [animationDirection, setAnimationDirection] = useState("");
     const [isAnimating, setIsAnimating] = useState(false);
     const [textAnimationClass, setTextAnimationClass] = useState("");
+
     useEffect(() => {
         const handleScroll = (e) => {
             if (isAnimating) return;
@@ -75,7 +76,6 @@ function App() {
             }, 200);
         }, 200);
     };
-
     const handlePrev = () => {
         if (isAnimating || currentIndex <= 0) return;
 
@@ -93,27 +93,29 @@ function App() {
             }, 200);
         }, 200);
     };
+
     return (
     <div className="App">
       <header className="App-header">
        <div className={'container'}>
            <div className={'labels'}>
-               <span style={{fontSize: 44, zIndex: '1',  position: 'absolute', left: '2.5rem', fontWeight: 800}}>Sunshine</span> <br/>
-               <span style={{fontSize: 12, zIndex: '1',  position: 'absolute', left: '9rem', top: '3rem'}}>CRAFT BEER</span>
-               <span style={{fontSize: 12, zIndex: '1', position: 'absolute', right: '2.5rem', top: '1.5rem', color: 'gray', fontWeight: 800}}>MADE WITH</span> <br/>
-               <span style={{fontSize: 25, zIndex: '1', position: 'absolute', right: '2.5rem', top: '2.4rem'}}>MirZad</span>
-               <div style={{position: 'absolute', zIndex: '1', bottom: '2.5rem', left: '2.5rem', display: 'flex', gap: 10}}>
-                   <InstagramIcon fontSize={'large'}/>
-                   <LinkedInIcon fontSize={'large'}/>
-                   <GitHubIcon fontSize={'large'}/>
-               </div>
-               <div style={{ position: 'absolute', zIndex: '1', bottom: '2.5rem', right: '2.5rem', display: 'flex', flexDirection: 'column' }}>
-                   <KeyboardArrowUpIcon fontSize={'large'} onClick={handlePrev} style={{ cursor: 'pointer' }} />
-                   <KeyboardArrowDownIcon fontSize={'large'} onClick={handleNext} style={{ cursor: 'pointer' }} />
-               </div>
+               {/*<span style={{fontSize: 44, left: '2.5rem', fontWeight: 800}}>Sunshine</span> <br/>*/}
+               {/*<span style={{fontSize: 12, left: '9rem', top: '3rem'}}>CRAFT BEER</span>*/}
+               {/*<span style={{fontSize: 12, right: '2.5rem', top: '1.5rem', color: 'gray', fontWeight: 800}}>MADE WITH</span> <br/>*/}
+               {/*<span style={{fontSize: 25, right: '2.5rem', top: '2.4rem'}}>MirZad</span>*/}
+               {/*<div>*/}
+               {/*    <InstagramIcon fontSize={'large'}/>*/}
+               {/*    <LinkedInIcon fontSize={'large'}/>*/}
+               {/*    <GitHubIcon fontSize={'large'}/>*/}
+               {/*</div>*/}
+               {/*<div style={{ position: 'absolute', zIndex: '1', bottom: '2.5rem', right: '2.5rem', display: 'flex', flexDirection: 'column' }}>*/}
+               {/*    <KeyboardArrowUpIcon fontSize={'large'} onClick={handlePrev} style={{ cursor: 'pointer' }} />*/}
+               {/*    <KeyboardArrowDownIcon fontSize={'large'} onClick={handleNext} style={{ cursor: 'pointer' }} />*/}
+               {/*</div>*/}
            </div>
            <Grid container spacing={1}>
                <Grid size={6}>
+                   <img src='/beer-logo.png' alt={''} className={'logo'}/>
                    <div>
                        <video
                            src="/beer-video.mp4"
@@ -131,12 +133,21 @@ function App() {
                                objectFit: 'cover',
                            }}
                        />
-                       {/*<div className={'friends-img images'}></div>*/}
-                       <div className={'burger-img images'}></div>
+                       <div className={'friends-img images'}></div>
+                       {/*<div className={'burger-img images'}></div>*/}
                        {/*<div className={'slide4-img images'}></div>*/}
+                   </div>
+                   <div  className={'social-media'}>
+                      <InstagramIcon fontSize={'large'}/>
+                      <LinkedInIcon fontSize={'large'}/>
+                      <GitHubIcon fontSize={'large'}/>
                    </div>
                </Grid>
                <Grid size={6}>
+                   <div className={'developer-name'}>
+                       <span style={{fontSize: 12, color: 'gray', fontWeight: 100}}>MADE WITH</span> <br/>
+                       <span style={{fontSize: 35}}>MirZad</span>
+                   </div>
                    <div className={'image-container'}>
                        <img
                            key={bottles[currentIndex]}
@@ -155,6 +166,10 @@ function App() {
                                Learn More
                            </Button>
                        </div>
+                   </div>
+                   <div className={'slider-icon'}>
+                      <KeyboardArrowUpIcon fontSize={'large'} onClick={handlePrev} style={{ cursor: 'pointer' }} />
+                      <KeyboardArrowDownIcon fontSize={'large'} onClick={handleNext} style={{ cursor: 'pointer' }} />
                    </div>
                </Grid>
            </Grid>
