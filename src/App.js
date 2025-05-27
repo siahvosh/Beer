@@ -98,45 +98,23 @@ function App() {
     <div className="App">
       <header className="App-header">
        <div className={'container'}>
-           <div className={'labels'}>
-               {/*<span style={{fontSize: 44, left: '2.5rem', fontWeight: 800}}>Sunshine</span> <br/>*/}
-               {/*<span style={{fontSize: 12, left: '9rem', top: '3rem'}}>CRAFT BEER</span>*/}
-               {/*<span style={{fontSize: 12, right: '2.5rem', top: '1.5rem', color: 'gray', fontWeight: 800}}>MADE WITH</span> <br/>*/}
-               {/*<span style={{fontSize: 25, right: '2.5rem', top: '2.4rem'}}>MirZad</span>*/}
-               {/*<div>*/}
-               {/*    <InstagramIcon fontSize={'large'}/>*/}
-               {/*    <LinkedInIcon fontSize={'large'}/>*/}
-               {/*    <GitHubIcon fontSize={'large'}/>*/}
-               {/*</div>*/}
-               {/*<div style={{ position: 'absolute', zIndex: '1', bottom: '2.5rem', right: '2.5rem', display: 'flex', flexDirection: 'column' }}>*/}
-               {/*    <KeyboardArrowUpIcon fontSize={'large'} onClick={handlePrev} style={{ cursor: 'pointer' }} />*/}
-               {/*    <KeyboardArrowDownIcon fontSize={'large'} onClick={handleNext} style={{ cursor: 'pointer' }} />*/}
-               {/*</div>*/}
-           </div>
            <Grid container spacing={1}>
                <Grid size={6}>
                    <img src='/beer-logo.png' alt={''} className={'logo'}/>
-                   <div>
+                   {/*<div style={{}}>*/}
                        <video
                            src="/beer-video.mp4"
                            autoPlay
                            loop
                            muted
                            playsInline
+                           className={'video'}
                            // width={1000}
-                           style={{
-                               position: 'absolute',
-                               top: 0,
-                               left: 0,
-                               width: '50%',
-                               height: '100%',
-                               objectFit: 'cover',
-                           }}
                        />
-                       <div className={'friends-img images'}></div>
-                       {/*<div className={'burger-img images'}></div>*/}
-                       {/*<div className={'slide4-img images'}></div>*/}
-                   </div>
+                       <div className={'friends-img images'}/>
+                       <div className={'burger-img images'}/>
+                       <div className={'slide4-img images'}/>
+                   {/*</div>*/}
                    <div  className={'social-media'}>
                       <InstagramIcon fontSize={'large'}/>
                       <LinkedInIcon fontSize={'large'}/>
@@ -158,10 +136,18 @@ function App() {
                    </div>
                    <div className={'text-container'}>
                        <div className={`text-animation ${textAnimationClass}`}>
-                           <span style={{ fontSize: '5rem', fontWeight: 800 }}>{texts[currentIndex].title}</span>
-                           <span className={'label-font'} style={{color: `${texts[currentIndex].color}` }}>{texts[currentIndex].label}</span>
-                           <span style={{ fontSize: '5rem', fontWeight: 800, marginTop: '-3rem'}}>{texts[currentIndex].title2}</span>
-                           <p style={{color: 'gray', marginTop: '1rem', fontWeight: 100 }}>{texts[currentIndex].desc}</p>
+                           <span>
+                               {texts[currentIndex].title}
+                           </span>
+                           <span className={'label-font'} style={{color: `${texts[currentIndex].color}` }}>
+                               {texts[currentIndex].label}
+                           </span>
+                           <span style={{ marginTop: '-3rem'}}>
+                               {texts[currentIndex].title2}
+                           </span>
+                           <p style={{color: 'gray', marginTop: '1rem'}}>
+                               {texts[currentIndex].desc}
+                           </p>
                            <Button style={{ fontWeight: 500, background: `${texts[currentIndex].color}`, borderRadius: '14px', width: '200px', marginTop: '1rem', color: 'black' }}>
                                Learn More
                            </Button>

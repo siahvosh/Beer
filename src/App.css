@@ -1,9 +1,12 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Great+Vibes&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 .App {
   text-align: center;
   font-family: Allura;
+}
+
+span{
+  font-size: clamp(1rem, 5vw, 6rem);
 }
 
 .App-header {
@@ -22,6 +25,7 @@
   width: 100vw;
   height: 100vh;
   background: #21181F !important;
+  overflow: hidden;
 }
 .logo{
   position: absolute;
@@ -47,15 +51,6 @@
 }
 
 
-.labels{
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  z-index: 1;
-  /*border: 2px solid red;*/
-}
-
-
 .images{
   display: flex;
   position: absolute;
@@ -63,8 +58,19 @@
   background-size: cover;
   height: 100%;
   width: 50%;
-  margin: auto;
+  /*margin: auto;*/
 }
+.video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  object-fit: cover;
+}
+
+
+
 .friends-img{
   background-position: center;
   background-image: url("/public/beach-friends5.png"), url("/public/clouds_1929.jpeg");
@@ -149,12 +155,17 @@ img{
 }
 
 .text-container{
-  margin: 20vh 0 0 15vh;
   text-align: left;
   padding: 5rem;
   font-family: Averia Serif Libre;
+  display: flex;
+  overflow: hidden;
+  /*border: 1px solid red;*/
+
 }
+
 .text-animation{
+  margin: 25vh 0 0 6vh;
   display: flex;
   flex-direction: column;
   font-size: clamp(1rem, 1.5vw, 2.5rem);
@@ -212,4 +223,23 @@ img{
   right: 2.5rem;
   bottom: 1.5rem;
   z-index: 1;
+}
+
+
+@media screen and (max-width:  1200px) {
+  .images{
+    height: 50%;
+    width: 100%;
+  }
+  .video{
+    height: 50%;
+    width: 100%;
+  }
+  .text-container{
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    display: flex;
+
+  }
 }
