@@ -39,10 +39,31 @@ function App() {
             color: '#4CD964'
         }
     ];
+    const media = [
+        {
+            video: "/beer-video.mp4",
+        },
+        {
+            video: "/blue-video.mp4",
+            backgroundClass: "friends-img"
+
+        },
+        {
+            video: "/red-video.mp4",
+            backgroundClass: "burger-img"
+
+        },
+        {
+            video: "/green-video.mp4",
+            backgroundClass: "slide4-img"
+        }
+    ];
     const [currentIndex, setCurrentIndex] = useState(0);
     const [animationDirection, setAnimationDirection] = useState("");
     const [isAnimating, setIsAnimating] = useState(false);
     const [textAnimationClass, setTextAnimationClass] = useState("");
+
+
 
     useEffect(() => {
         const handleScroll = (e) => {
@@ -58,6 +79,7 @@ function App() {
         window.addEventListener("wheel", handleScroll);
         return () => window.removeEventListener("wheel", handleScroll);
     }, [isAnimating, currentIndex]);
+
 
     const handleNext = () => {
         if (isAnimating || currentIndex >= bottles.length - 1) return;
@@ -101,20 +123,20 @@ function App() {
            <Grid container spacing={1}>
                <Grid size={6}>
                    <img src='/beer-logo.png' alt={''} className={'logo'}/>
-                   {/*<div style={{}}>*/}
-                       <video
-                           src="/beer-video.mp4"
+                   <div >
+                       {media[currentIndex].video === '/beer-video.mp4' &&
+                         (  < video
+                           key={media[currentIndex].video}
+                           src={media[currentIndex].video}
                            autoPlay
                            loop
                            muted
                            playsInline
                            className={'video'}
-                           // width={1000}
-                       />
-                       <div className={'friends-img images'}/>
-                       <div className={'burger-img images'}/>
-                       <div className={'slide4-img images'}/>
-                   {/*</div>*/}
+                           />)
+                       }
+                       <div className={`images ${media[currentIndex].backgroundClass}`} />
+                   </div>
                    <div  className={'social-media'}>
                       <InstagramIcon fontSize={'large'}/>
                       <LinkedInIcon fontSize={'large'}/>
