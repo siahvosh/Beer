@@ -119,8 +119,8 @@ function App() {
        <div className={'container'}>
            <Grid container spacing={1}>
                <Grid size={6}>
-                   <img src='/beer-logo.png' alt={''} className={'logo'}/>
-                   <div >
+                   <img src={"beer-logo.png"} alt={''} className={'logo'}/>
+                   <div>
                        {media[currentIndex].video === '/beer-video.mp4' &&
                          (  < video
                            key={media[currentIndex].video}
@@ -134,7 +134,7 @@ function App() {
                        }
                        <div className={`images ${media[currentIndex].backgroundClass}`} />
                    </div>
-                   <div  className={'social-media'}>
+                   <div className={'social-media'}>
                       <InstagramIcon fontSize={'large'}/>
                       <LinkedInIcon fontSize={'large'}/>
                       <GitHubIcon fontSize={'large'}/>
