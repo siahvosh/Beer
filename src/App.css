@@ -61,7 +61,8 @@ span{
   background-size: cover;
   height: 100%;
   width: 50%;
-  /*margin: auto;*/
+  transition: all 1s;
+
 }
 .video{
   position: absolute;
@@ -80,9 +81,11 @@ span{
 }
 
 .burger-img{
+  /*background-position: center ;*/
   background-image:  url("/public/burger4.png"), url("/public/burger-bg2.jpg");
 }
 .slide4-img{
+  /*background-position: center ;*/
   background-image:  url("/public/slide41.jpg");
 }
 
@@ -116,6 +119,7 @@ img{
 
 .up {
   animation: moveUp 0.6s forwards;
+
 }
 .down {
   animation: moveDownIn 0.6s forwards;
@@ -140,7 +144,7 @@ img{
 
 @keyframes moveUp {
   from { transform: translate(-50%, -50%); opacity: 1; }
-  to   { transform: translate(-50%, -150%); opacity: 0; }
+  to   { transform: translate(-50%, -150%); opacity: 0;  }
 }
 
 @keyframes moveDownOut {
@@ -159,21 +163,19 @@ img{
 }
 
 .text-container{
-  text-align: left;
   font-family: Averia Serif Libre;
-  display: flex;
+  margin: 18vh 0px 0px 0px;
   overflow: hidden;
-  border: 1px solid red;
-  justify-content: center;
+
 }
 
 .text-animation{
-  /*margin: 25vh 0 0 6vh;*/
-  position: absolute;
+  padding: 100px;
+  /*position: absolute;*/
   text-align: left;
-  /*font-family: Averia Serif Libre;*/
   display: flex;
-  flex-direction: column;  border: 1px solid blue;
+  flex-direction: column;
+  /*border: 1px solid blue;*/
   font-size: clamp(1rem, 1.5vw, 2.5rem);
 }
 
